@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Privacy Policy | UrbanDude</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #080a0d;
+            color: white;
+            line-height: 1.7;
+        }
+
+        /* NAVBAR */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(8,10,13,0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #292e35;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #00d9ff;
+        }
+
+        .menu {
+            display: flex;
+            gap: 22px;
+        }
+
+        .menu a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover,
+        .menu .active {
+            color: #00d9ff;
+        }
+
+        .icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .icons a {
+            color: white;
+            text-decoration: none;
+            font-size: 21px;
+        }
+
+        .icons a:hover {
+            color: #00d9ff;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(0,217,255,0.13),
+                    transparent 50%
+                );
+        }
+
+        .hero-content {
+            padding: 60px 20px;
+        }
+
+        .hero-content p {
+            color: #00d9ff;
+            letter-spacing: 3px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hero-content h1 {
+            font-size: 50px;
+            margin-bottom: 12px;
+        }
+
+        .hero-content h1 span {
+            color: #00d9ff;
+        }
+
+        .hero-content .date {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* CONTENT */
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 25px;
+        }
+
+        .intro {
+            background: #11151a;
+            border: 1px solid #292e35;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+
+        .intro p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .policy-section {
+            background: #11151a;
+            border: 1px solid #292e35;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .policy-section:hover {
+            border-color: #00d9ff;
+        }
+
+        .policy-section h2 {
+            color: white;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .policy-section h2 span {
+            color: #00d9ff;
+        }
+
+        .policy-section p {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .policy-section ul {
+            margin-left: 22px;
+            color: #999;
+        }
+
+        .policy-section li {
+            margin-bottom: 7px;
+            font-size: 14px;
+        }
+
+        .highlight {
+            border-left: 3px solid #00d9ff;
+            padding: 15px 18px;
+            background: rgba(0,217,255,0.05);
+            margin-top: 15px;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* CTA */
+
+        .cta {
+            text-align: center;
+            padding: 70px 20px;
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(0,217,255,0.1),
+                    transparent 50%
+                );
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .cta p {
+            color: #999;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 28px;
+            background: #00d9ff;
+            color: #061014;
+            text-decoration: none;
+            border-radius: 7px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(0,217,255,0.35);
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #292e35;
+            padding: 35px 25px;
+            text-align: center;
+            background: #06080a;
+        }
+
+        .footer-logo {
+            font-size: 23px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .footer-logo span {
+            color: #00d9ff;
+        }
+
+        footer p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        .footer-links {
+            margin: 18px 0;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            margin: 0 9px;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: #00d9ff;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+
+            .menu {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+        }
+
+        @media (max-width: 500px) {
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .policy-section,
+            .intro {
+                padding: 22px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                URBAN<span>DUDE</span>
+            </div>
+
+            <div class="menu">
+
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="shirts.html">Shirts</a>
+                <a href="tshirts.html">T-Shirts</a>
+                <a href="pants.html">Pants</a>
+                <a href="jackets.html">Jackets</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+            <div class="icons">
+
+                <a href="search.html">⌕</a>
+                <a href="favourites.html">♡</a>
+                <a href="cart.html">🛒</a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p>URBANDUDE INFORMATION</p>
+
+            <h1>
+                PRIVACY <span>POLICY</span>
+            </h1>
+
+            <div class="date">
+                Last Updated: September 2026
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- POLICY CONTENT -->
+
+    <main class="container">
+
+
+        <div class="intro">
+
+            <p>
+                Welcome to UrbanDude. Your privacy is important to us.
+                This Privacy Policy explains how information may be
+                collected, used and protected when you use the UrbanDude
+                website.
+            </p>
+
+        </div>
+
+
+        <!-- SECTION 1 -->
+
+        <section class="policy-section">
+
+            <h2>
+                01. <span>Information We Collect</span>
+            </h2>
+
+            <p>
+                When you use our website, we may collect information
+                that you provide while using different services.
+            </p>
+
+            <ul>
+
+                <li>Name and contact information</li>
+
+                <li>Email address and phone number</li>
+
+                <li>Delivery and billing information</li>
+
+                <li>Account login information</li>
+
+                <li>Product preferences and shopping activity</li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- SECTION 2 -->
+
+        <section class="policy-section">
+
+            <h2>
+                02. <span>How We Use Information</span>
+            </h2>
+
+            <p>
+                Information may be used to provide and improve
+                our services.
+            </p>
+
+            <ul>
+
+                <li>Process and manage orders</li>
+
+                <li>Provide customer support</li>
+
+                <li>Improve website functionality</li>
+
+                <li>Communicate important order updates</li>
+
+                <li>Improve products and shopping experience</li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- SECTION 3 -->
+
+        <section class="policy-section">
+
+            <h2>
+                03. <span>Account Security</span>
+            </h2>
+
+            <p>
+                Users are responsible for keeping their account
+                login information private and secure.
+            </p>
+
+            <div class="highlight">
+
+                Never share your password or other private
+                account information with another person.
+
+            </div>
+
+        </section>
+
+
+        <!-- SECTION 4 -->
+
+        <section class="policy-section">
+
+            <h2>
+                04. <span>Cookies</span>
+            </h2>
+
+            <p>
+                Our website may use cookies or similar technologies
+                to improve website performance and provide a better
+                browsing experience.
+            </p>
+
+            <p>
+                Cookies can help remember preferences and understand
+                how visitors interact with a website.
+            </p>
+
+        </section>
+
+
+        <!-- SECTION 5 -->
+
+        <section class="policy-section">
+
+            <h2>
+                05. <span>Payment Information</span>
+            </h2>
+
+            <p>
+                Payment information should be handled through
+                appropriate secure payment services. Sensitive
+                payment information should not be stored directly
+                on this demonstration website.
+            </p>
+
+        </section>
+
+
+        <!-- SECTION 6 -->
+
+        <section class="policy-section">
+
+            <h2>
+                06. <span>Third-Party Services</span>
+            </h2>
+
+            <p>
+                Some website features may depend on third-party
+                services. These services may have their own privacy
+                policies and terms.
+            </p>
+
+        </section>
+
+
+        <!-- SECTION 7 -->
+
+        <section class="policy-section">
+
+            <h2>
+                07. <span>Data Protection</span>
+            </h2>
+
+            <p>
+                We aim to protect information using reasonable
+                security practices. However, no online system can
+                guarantee complete security.
+            </p>
+
+        </section>
+
+
+        <!-- SECTION 8 -->
+
+        <section class="policy-section">
+
+            <h2>
+                08. <span>Your Choices</span>
+            </h2>
+
+            <p>
+                Users may contact UrbanDude regarding their personal
+                information, account details or other privacy-related
+                questions.
+            </p>
+
+        </section>
+
+
+        <!-- SECTION 9 -->
+
+        <section class="policy-section">
+
+            <h2>
+                09. <span>Children's Privacy</span>
+            </h2>
+
+            <p>
+                This website is designed as a general fashion shopping
+                platform. Users should provide information only when
+                they are permitted to do so under applicable laws and
+                the website's terms.
+            </p>
+
+        </section>
+
+
+        <!-- SECTION 10 -->
+
+        <section class="policy-section">
+
+            <h2>
+                10. <span>Policy Updates</span>
+            </h2>
+
+            <p>
+                UrbanDude may update this Privacy Policy when website
+                features or practices change. The latest version will
+                be displayed on this page.
+            </p>
+
+        </section>
+
+
+        <!-- SECTION 11 -->
+
+        <section class="policy-section">
+
+            <h2>
+                11. <span>Contact Us</span>
+            </h2>
+
+            <p>
+                If you have questions about this Privacy Policy,
+                please contact the UrbanDude support team.
+            </p>
+
+            <div class="highlight">
+
+                Email: support@urbandude.com
+
+                <br>
+
+                Phone: +91 98765 43210
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>Have Questions?</h2>
+
+        <p>
+            Our team is ready to help you.
+        </p>
+
+        <a href="contact.html" class="btn">
+            CONTACT US
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            URBAN<span>DUDE</span>
+        </div>
+
+        <p>
+            Your Style, Your Story.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="login.html">Login</a>
+            <a href="cart.html">Cart</a>
+
+        </div>
+
+        <p>
+            © 2026 UrbanDude. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+</html>

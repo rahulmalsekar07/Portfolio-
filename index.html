@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanDude | Men's Fashion</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #080a0d;
+            color: white;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(8,10,13,0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #292e35;
+        }
+
+        nav {
+            max-width: 1250px;
+            margin: auto;
+            min-height: 75px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #00d9ff;
+        }
+
+        .menu {
+            display: flex;
+            gap: 22px;
+        }
+
+        .menu a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #00d9ff;
+        }
+
+        .icons {
+            display: flex;
+            gap: 14px;
+        }
+
+        .icons a {
+            color: white;
+            text-decoration: none;
+            font-size: 21px;
+            transition: 0.3s;
+        }
+
+        .icons a:hover {
+            color: #00d9ff;
+            transform: translateY(-2px);
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background:
+                linear-gradient(90deg,
+                rgba(8,10,13,0.98) 0%,
+                rgba(8,10,13,0.78) 45%,
+                rgba(8,10,13,0.25) 100%),
+                url("https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 1250px;
+            width: 100%;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .small-title {
+            color: #00d9ff;
+            font-size: 14px;
+            letter-spacing: 4px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 7vw, 90px);
+            line-height: 0.95;
+            max-width: 700px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #00d9ff;
+        }
+
+        .hero p {
+            color: #c4c8cd;
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 550px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #00d9ff;
+            color: #061014;
+        }
+
+        .primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,217,255,0.2);
+        }
+
+        .secondary {
+            color: white;
+            border: 1px solid #00d9ff;
+        }
+
+        .secondary:hover {
+            background: #00d9ff;
+            color: #061014;
+        }
+
+        /* ================= FEATURES ================= */
+
+        .features {
+            max-width: 1200px;
+            margin: -45px auto 70px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .feature {
+            background: rgba(17,21,26,0.95);
+            border: 1px solid #292e35;
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+            font-size: 15px;
+            margin-bottom: 7px;
+        }
+
+        .feature p {
+            color: #888f97;
+            font-size: 12px;
+        }
+
+        /* ================= SECTION ================= */
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 25px;
+        }
+
+        .section-heading h2 {
+            font-size: 32px;
+        }
+
+        .section-heading h2 span {
+            color: #00d9ff;
+        }
+
+        .section-heading p {
+            color: #8f969e;
+            margin-top: 7px;
+            font-size: 14px;
+        }
+
+        .view-all {
+            color: #00d9ff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .view-all:hover {
+            text-decoration: underline;
+        }
+
+        /* ================= CATEGORIES ================= */
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .category {
+            height: 330px;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #292e35;
+        }
+
+        .category img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .category:hover img {
+            transform: scale(1.08);
+        }
+
+        .category-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent 35%, rgba(0,0,0,0.9));
+            display: flex;
+            align-items: end;
+            padding: 25px;
+        }
+
+        .category-info h3 {
+            font-size: 23px;
+            margin-bottom: 8px;
+        }
+
+        .category-info a {
+            color: #00d9ff;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        /* ================= PRODUCTS ================= */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            background: #11151a;
+            border: 1px solid #292e35;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .product:hover {
+            transform: translateY(-7px);
+            border-color: #00d9ff;
+        }
+
+        .product-image {
+            height: 280px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .product:hover .product-image img {
+            transform: scale(1.06);
+        }
+
+        .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #00d9ff;
+            color: #061014;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .heart {
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-size: 20px;
+        }
+
+        .heart:hover {
+            background: #00d9ff;
+            color: #061014;
+        }
+
+        .product-info {
+            padding: 16px;
+        }
+
+        .product-category {
+            color: #00d9ff;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-info h3 {
+            font-size: 16px;
+            margin: 7px 0;
+        }
+
+        .rating {
+            color: #ffd43b;
+            font-size: 13px;
+        }
+
+        .rating span {
+            color: #888;
+            margin-left: 4px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 12px 0;
+        }
+
+        .old-price {
+            color: #666;
+            font-size: 12px;
+            text-decoration: line-through;
+            margin-left: 6px;
+        }
+
+        .cart {
+            display: block;
+            text-align: center;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #00d9ff;
+            color: white;
+            border-radius: 7px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .cart:hover {
+            background: #00d9ff;
+            color: #061014;
+        }
+
+        /* ================= OFFER ================= */
+
+        .offer {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+
+        .offer-box {
+            min-height: 300px;
+            border-radius: 18px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg,
+                rgba(0,0,0,0.9),
+                rgba(0,0,0,0.45)),
+                url("https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?auto=format&fit=crop&w=1400&q=80");
+
+            background-size: cover;
+            background-position: center;
+            padding: 50px;
+            border: 1px solid #292e35;
+        }
+
+        .offer-content {
+            max-width: 500px;
+        }
+
+        .offer-content small {
+            color: #00d9ff;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .offer-content h2 {
+            font-size: 42px;
+            margin: 12px 0;
+        }
+
+        .offer-content p {
+            color: #c1c6cc;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* ================= WHY US ================= */
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .why-card {
+            background: #11151a;
+            border: 1px solid #292e35;
+            border-radius: 14px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .why-card:hover {
+            border-color: #00d9ff;
+            transform: translateY(-5px);
+        }
+
+        .why-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .why-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            color: #8e969e;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* ================= NEWSLETTER ================= */
+
+        .newsletter {
+            background: #11151a;
+            border-top: 1px solid #292e35;
+            border-bottom: 1px solid #292e35;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .newsletter h2 span {
+            color: #00d9ff;
+        }
+
+        .newsletter p {
+            color: #8d959d;
+            margin-bottom: 25px;
+        }
+
+        .newsletter-form {
+            max-width: 550px;
+            margin: auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 14px;
+            background: #080a0d;
+            border: 1px solid #292e35;
+            color: white;
+            border-radius: 7px;
+            outline: none;
+        }
+
+        .newsletter-form input:focus {
+            border-color: #00d9ff;
+        }
+
+        .newsletter-form button {
+            padding: 14px 22px;
+            background: #00d9ff;
+            color: #061014;
+            border: none;
+            border-radius: 7px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #060709;
+            padding: 50px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 35px;
+        }
+
+        .footer-col h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer-col h3 span {
+            color: #00d9ff;
+        }
+
+        .footer-col p {
+            color: #858d95;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #858d95;
+            text-decoration: none;
+            margin: 9px 0;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: #00d9ff;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 35px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #20242a;
+            text-align: center;
+            color: #60666d;
+            font-size: 13px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width: 1000px) {
+
+            .menu {
+                gap: 12px;
+            }
+
+            .categories,
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 700px) {
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .menu {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .section-heading {
+                display: block;
+            }
+
+            .view-all {
+                display: inline-block;
+                margin-top: 10px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .offer-box {
+                padding: 35px 25px;
+            }
+
+            .offer-content h2 {
+                font-size: 32px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+
+        @media(max-width: 500px) {
+
+            .categories,
+            .products,
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .category {
+                height: 300px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+        <nav>
+
+            <a href="index.html" class="logo">
+                URBAN<span>DUDE</span>
+            </a>
+
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="shirts.html">Shirts</a>
+                <a href="tshirts.html">T-Shirts</a>
+                <a href="pants.html">Pants</a>
+                <a href="jackets.html">Jackets</a>
+                <a href="accessories.html">Accessories</a>
+            </div>
+
+            <div class="icons">
+                <a href="search.html">⌕</a>
+                <a href="favourites.html">♡</a>
+                <a href="cart.html">🛒</a>
+                <a href="checkout.html">@</a>
+                <a href="login.html">♙</a>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                MEN'S FASHION • 2026 COLLECTION
+            </div>
+
+            <h1>
+                OWN<br>
+                YOUR <span>STYLE.</span>
+            </h1>
+
+            <p>
+                Discover modern men's fashion designed for confidence,
+                comfort and everyday style. Find your perfect look at
+                UrbanDude.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="shop.html" class="btn primary">
+                    SHOP NOW →
+                </a>
+
+                <a href="#categories" class="btn secondary">
+                    EXPLORE COLLECTION
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features">
+
+        <div class="feature-grid">
+
+            <div class="feature">
+                <div class="feature-icon">🚚</div>
+                <h3>Fast Delivery</h3>
+                <p>Quick delivery across India</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">✓</div>
+                <h3>Premium Quality</h3>
+                <p>Quality fashion products</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">↩</div>
+                <h3>Easy Returns</h3>
+                <p>Simple return experience</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure Shopping</h3>
+                <p>Safe and secure checkout</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="section" id="categories">
+
+        <div class="section-heading">
+            <div>
+                <h2>SHOP BY <span>CATEGORY</span></h2>
+                <p>Find your style from our latest collections.</p>
+            </div>
+
+            <a href="shop.html" class="view-all">View All →</a>
+        </div>
+
+
+        <div class="categories">
+
+            <div class="category">
+
+                <img src="cl57.jpg">
+
+                <div class="category-overlay">
+                    <div class="category-info">
+                        <h3>Shirts</h3>
+                        <a href="shirts.html">SHOP SHIRTS →</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="category">
+
+                <img src="cl38.jpg">
+
+                <div class="category-overlay">
+                    <div class="category-info">
+                        <h3>T-Shirts</h3>
+                        <a href="tshirts.html">SHOP T-SHIRTS →</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="category">
+
+                <img src="cl56.jpg">
+
+                <div class="category-overlay">
+                    <div class="category-info">
+                        <h3>Pants</h3>
+                        <a href="pants.html">SHOP PANTS →</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="category">
+
+                <img src="cl55.jpg">
+
+                <div class="category-overlay">
+                    <div class="category-info">
+                        <h3>Jackets</h3>
+                        <a href="jackets.html">SHOP JACKETS →</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= NEW ARRIVALS ================= -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div>
+                <h2>NEW <span>ARRIVALS</span></h2>
+                <p>Fresh styles just added to UrbanDude.</p>
+            </div>
+
+            <a href="shop.html" class="view-all">View All →</a>
+
+        </div>
+
+
+        <div class="products">
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="cl53.jpg">
+
+                    <div class="badge">NEW</div>
+                    <div class="heart">♡</div>
+                </div>
+
+                <div class="product-info">
+                    <div class="product-category">Shirt</div>
+                    <h3>Urban Premium White Shirt</h3>
+
+                    <div class="rating">
+                        ★★★★★ <span>4.8 (126)</span>
+                    </div>
+
+                    <div class="price">
+                        ₹1,499
+                        <span class="old-price">₹1,999</span>
+                    </div>
+
+                    <a href="product.html" class="cart">VIEW PRODUCT</a>
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="cl52.jpg">
+
+                    <div class="badge">NEW</div>
+                    <div class="heart">♡</div>
+                </div>
+
+                <div class="product-info">
+                    <div class="product-category">T-Shirt</div>
+                    <h3>Urban Essential Black T-shirt</h3>
+
+                    <div class="rating">
+                        ★★★★★ <span>4.7 (98)</span>
+                    </div>
+
+                    <div class="price">
+                        ₹899
+                        <span class="old-price">₹1,199</span>
+                    </div>
+
+                    <a href="product.html" class="cart">VIEW PRODUCT</a>
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=700&q=80">
+
+                    <div class="badge">TRENDING</div>
+                    <div class="heart">♡</div>
+                </div>
+
+                <div class="product-info">
+                    <div class="product-category">Pants</div>
+                    <h3>Urban Slim Fit Pants</h3>
+
+                    <div class="rating">
+                        ★★★★★ <span>4.8 (87)</span>
+                    </div>
+
+                    <div class="price">
+                        ₹1,599
+                        <span class="old-price">₹2,099</span>
+                    </div>
+
+                    <a href="product.html" class="cart">VIEW PRODUCT</a>
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="cl54.jpg">
+
+                    <div class="badge">NEW</div>
+                    <div class="heart">♡</div>
+                </div>
+
+                <div class="product-info">
+                    <div class="product-category">Jacket</div>
+                    <h3>Urban Classic Jacket</h3>
+
+                    <div class="rating">
+                        ★★★★★ <span>4.9 (73)</span>
+                    </div>
+
+                    <div class="price">
+                        ₹2,499
+                        <span class="old-price">₹3,499</span>
+                    </div>
+
+                    <a href="product.html" class="cart">VIEW PRODUCT</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SPECIAL OFFER ================= -->
+
+    <section class="offer">
+
+        <div class="offer-box">
+
+            <div class="offer-content">
+
+                <small>LIMITED TIME OFFER</small>
+
+                <h2>UP TO 40% OFF</h2>
+
+                <p>
+                    Upgrade your wardrobe with selected UrbanDude styles.
+                    Grab your favourites before the offer ends.
+                </p>
+
+                <a href="shop.html" class="btn primary">
+                    SHOP SALE →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BEST SELLERS ================= -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div>
+                <h2>BEST <span>SELLERS</span></h2>
+                <p>Popular styles loved by UrbanDude customers.</p>
+            </div>
+
+            <a href="shop.html" class="view-all">View All →</a>
+
+        </div>
+
+
+        <div class="products">
+
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=700&q=80">
+
+                    <div class="badge">POPULAR</div>
+                    <div class="heart">♡</div>
+                </div>
+
+                <div class="product-info">
+                    <div class="product-category">T-Shirt</div>
+                    <h3>Urban Oversized T-shirt</h3>
+
+                    <div class="rating">
+                        ★★★★★ <span>4.8 (139)</span>
+                    </div>
+
+                    <div class="price">
+                        ₹999
+                        <span class="old-price">₹1,399</span>
+                    </div>
+
+                    <a href="buy.html" class="cart">VIEW PRODUCT</a>
+                </div>
+
+            </div>
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1548883354-94bcfe321cbb?auto=format&fit=crop&w=700&q=80">
+
+                    <div class="badge">HOT</div>
+                    <div class="heart">♡</div>
+                </div>
+
+                <div class="product-info">
+                    <div class="product-category">Jacket</div>
+                    <h3>Urban Street Jacket</h3>
+
+                    <div class="rating">
+                        ★★★★★ <span>4.8 (121)</span>
+                    </div>
+
+                    <div class="price">
+                        ₹2,799
+                        <span class="old-price">₹3,999</span>
+                    </div>
+
+                    <a href="product.html" class="cart">VIEW PRODUCT</a>
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=700&q=80">
+
+                    <div class="badge">TRENDING</div>
+                    <div class="heart">♡</div>
+                </div>
+
+                <div class="product-info">
+                    <div class="product-category">Jacket</div>
+                    <h3>Urban Premium Bomber</h3>
+
+                    <div class="rating">
+                        ★★★★★ <span>4.7 (104)</span>
+                    </div>
+
+                    <div class="price">
+                        ₹2,999
+                        <span class="old-price">₹4,199</span>
+                    </div>
+
+                    <a href="product.html" class="cart">VIEW PRODUCT</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ACCESSORIES ================= -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div>
+                <h2>COMPLETE YOUR <span>LOOK</span></h2>
+                <p>Finish your outfit with stylish accessories.</p>
+            </div>
+
+            <a href="accessories.html" class="view-all">Explore →</a>
+
+        </div>
+
+
+        <div class="categories">
+
+            <div class="category">
+
+                <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=700&q=80">
+
+                <div class="category-overlay">
+                    <div class="category-info">
+                        <h3>Watches</h3>
+                        <a href="accessories.html">SHOP NOW →</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="category">
+
+                <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80">
+
+                <div class="category-overlay">
+                    <div class="category-info">
+                        <h3>Sunglasses</h3>
+                        <a href="accessories.html">SHOP NOW →</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="category">
+
+                <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80">
+
+                <div class="category-overlay">
+                    <div class="category-info">
+                        <h3>Bags</h3>
+                        <a href="accessories.html">SHOP NOW →</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="category">
+
+                <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=700&q=80">
+
+                <div class="category-overlay">
+                    <div class="category-info">
+                        <h3>Wallets</h3>
+                        <a href="accessories.html">SHOP NOW →</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WHY URBANDUDE ================= -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div>
+                <h2>WHY <span>URBANDUDE?</span></h2>
+                <p>Fashion made simple, modern and accessible.</p>
+            </div>
+
+        </div>
+
+
+        <div class="why-grid">
+
+            <div class="why-card">
+                <div class="why-icon">✦</div>
+                <h3>Modern Designs</h3>
+                <p>
+                    Discover fresh and modern designs created for
+                    today's men's fashion.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">♢</div>
+                <h3>Quality First</h3>
+                <p>
+                    We focus on comfortable materials and stylish
+                    products for everyday use.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">♡</div>
+                <h3>Made For You</h3>
+                <p>
+                    Choose your favourite styles and create a look
+                    that represents your personality.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= NEWSLETTER ================= -->
+
+    <section class="newsletter">
+
+        <h2>STAY IN THE <span>LOOP</span></h2>
+
+        <p>
+            Get updates about new collections, offers and exclusive styles.
+        </p>
+
+        <form class="newsletter-form">
+
+            <input
+                type="email"
+                placeholder="Enter your email address">
+
+            <button type="submit">
+                SUBSCRIBE
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-col">
+
+                <h3>
+                    URBAN<span>DUDE</span>
+                </h3>
+
+                <p>
+                    Modern men's fashion made for your everyday style.
+                    Discover clothing and accessories that match
+                    your personality.
+                </p>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h3>Shop</h3>
+
+                <a href="shop.html">All Products</a>
+                <a href="shirts.html">Shirts</a>
+                <a href="tshirts.html">T-Shirts</a>
+                <a href="pants.html">Pants</a>
+                <a href="jackets.html">Jackets</a>
+                <a href="accessories.html">Accessories</a>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h3>Account</h3>
+
+                <a href="login.html">Login</a>
+                <a href="signup.html">Create Account</a>
+                <a href="favourites.html">Favourites</a>
+                <a href="cart.html">Shopping Cart</a>
+                <a href="checkout.html">Checkout</a>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h3>Company</h3>
+
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+            © 2026 UrbanDude. Your Style, Your Story. All Rights Reserved.
+        </div>
+
+    </footer>
+
+</body>
+</html>

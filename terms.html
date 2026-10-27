@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Terms & Conditions | UrbanDude</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #080a0d;
+            color: white;
+            line-height: 1.7;
+        }
+
+        /* NAVBAR */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(8,10,13,0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #292e35;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #00d9ff;
+        }
+
+        .menu {
+            display: flex;
+            gap: 21px;
+        }
+
+        .menu a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover,
+        .menu .active {
+            color: #00d9ff;
+        }
+
+        .icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .icons a {
+            color: white;
+            text-decoration: none;
+            font-size: 21px;
+        }
+
+        .icons a:hover {
+            color: #00d9ff;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(0,217,255,0.13),
+                    transparent 50%
+                );
+        }
+
+        .hero-content {
+            padding: 60px 20px;
+        }
+
+        .hero-content p {
+            color: #00d9ff;
+            font-size: 13px;
+            letter-spacing: 3px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hero-content h1 {
+            font-size: 50px;
+            margin-bottom: 12px;
+        }
+
+        .hero-content h1 span {
+            color: #00d9ff;
+        }
+
+        .hero-content .date {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* MAIN */
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 60px 25px;
+        }
+
+        .intro {
+            background: #11151a;
+            border: 1px solid #292e35;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+
+        .intro p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* TERMS CARDS */
+
+        .terms-section {
+            background: #11151a;
+            border: 1px solid #292e35;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .terms-section:hover {
+            border-color: #00d9ff;
+        }
+
+        .terms-section h2 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .terms-section h2 span {
+            color: #00d9ff;
+        }
+
+        .terms-section p {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .terms-section ul {
+            margin-left: 22px;
+            color: #999;
+        }
+
+        .terms-section li {
+            margin-bottom: 7px;
+            font-size: 14px;
+        }
+
+        .highlight {
+            margin-top: 15px;
+            padding: 15px 18px;
+
+            background: rgba(0,217,255,0.05);
+            border-left: 3px solid #00d9ff;
+
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* CTA */
+
+        .cta {
+            text-align: center;
+            padding: 70px 20px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(0,217,255,0.1),
+                    transparent 50%
+                );
+        }
+
+        .cta h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .cta p {
+            color: #999;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 28px;
+
+            background: #00d9ff;
+            color: #061014;
+
+            text-decoration: none;
+            border-radius: 7px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(0,217,255,0.35);
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #292e35;
+            padding: 35px 25px;
+            text-align: center;
+            background: #06080a;
+        }
+
+        .footer-logo {
+            font-size: 23px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .footer-logo span {
+            color: #00d9ff;
+        }
+
+        footer p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        .footer-links {
+            margin: 18px 0;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            margin: 0 9px;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: #00d9ff;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+
+            .menu {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .terms-section,
+            .intro {
+                padding: 22px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                URBAN<span>DUDE</span>
+            </div>
+
+            <div class="menu">
+
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="shirts.html">Shirts</a>
+                <a href="tshirts.html">T-Shirts</a>
+                <a href="pants.html">Pants</a>
+                <a href="jackets.html">Jackets</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+            <div class="icons">
+
+                <a href="search.html">⌕</a>
+                <a href="favourites.html">♡</a>
+                <a href="cart.html">🛒</a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p>URBANDUDE INFORMATION</p>
+
+            <h1>
+                TERMS <span>& CONDITIONS</span>
+            </h1>
+
+            <div class="date">
+                Last Updated: September 2026
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TERMS CONTENT -->
+
+    <main class="container">
+
+
+        <div class="intro">
+
+            <p>
+                Welcome to UrbanDude. These Terms & Conditions explain
+                the general rules for using the UrbanDude website,
+                browsing products and placing orders.
+            </p>
+
+        </div>
+
+
+        <!-- 01 -->
+
+        <section class="terms-section">
+
+            <h2>
+                01. <span>Acceptance of Terms</span>
+            </h2>
+
+            <p>
+                By accessing or using the UrbanDude website, you agree
+                to follow these Terms & Conditions and applicable
+                laws and regulations.
+            </p>
+
+            <div class="highlight">
+                Please read these terms carefully before using
+                the website or placing an order.
+            </div>
+
+        </section>
+
+
+        <!-- 02 -->
+
+        <section class="terms-section">
+
+            <h2>
+                02. <span>Website Usage</span>
+            </h2>
+
+            <p>
+                The UrbanDude website is provided for browsing,
+                shopping and learning about men's fashion products.
+            </p>
+
+            <ul>
+
+                <li>Use the website only for lawful purposes.</li>
+
+                <li>Do not attempt to damage or disrupt the website.</li>
+
+                <li>Do not misuse another user's account.</li>
+
+                <li>Do not submit false or misleading information.</li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- 03 -->
+
+        <section class="terms-section">
+
+            <h2>
+                03. <span>User Accounts</span>
+            </h2>
+
+            <p>
+                Some features may require you to create an account.
+                You are responsible for providing accurate information
+                and keeping your login credentials secure.
+            </p>
+
+            <p>
+                If you believe your account has been used without
+                permission, contact UrbanDude support.
+            </p>
+
+        </section>
+
+
+        <!-- 04 -->
+
+        <section class="terms-section">
+
+            <h2>
+                04. <span>Products & Prices</span>
+            </h2>
+
+            <p>
+                Product descriptions, images, prices and availability
+                are displayed for shopping purposes.
+            </p>
+
+            <ul>
+
+                <li>Product images may appear slightly different on different screens.</li>
+
+                <li>Prices may change without prior notice.</li>
+
+                <li>Product availability may change.</li>
+
+                <li>UrbanDude may correct pricing or product information errors.</li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- 05 -->
+
+        <section class="terms-section">
+
+            <h2>
+                05. <span>Orders</span>
+            </h2>
+
+            <p>
+                When you place an order, you provide information
+                required for processing and delivery.
+            </p>
+
+            <p>
+                An order may be subject to availability and
+                confirmation of the information provided.
+            </p>
+
+        </section>
+
+
+        <!-- 06 -->
+
+        <section class="terms-section">
+
+            <h2>
+                06. <span>Payment</span>
+            </h2>
+
+            <p>
+                Available payment methods may include card payments,
+                UPI and Cash on Delivery, depending on availability.
+            </p>
+
+            <p>
+                Payment details should be entered only through
+                appropriate secure payment systems.
+            </p>
+
+        </section>
+
+
+        <!-- 07 -->
+
+        <section class="terms-section">
+
+            <h2>
+                07. <span>Shipping & Delivery</span>
+            </h2>
+
+            <p>
+                Delivery times may depend on the delivery location,
+                product availability and other circumstances.
+            </p>
+
+            <ul>
+
+                <li>Delivery estimates are not guaranteed.</li>
+
+                <li>Incorrect addresses may cause delivery delays.</li>
+
+                <li>Customers should provide accurate contact details.</li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- 08 -->
+
+        <section class="terms-section">
+
+            <h2>
+                08. <span>Returns & Refunds</span>
+            </h2>
+
+            <p>
+                Returns, exchanges and refunds may be available
+                according to the applicable return policy.
+            </p>
+
+            <p>
+                Products may need to meet specific eligibility
+                requirements before a return is accepted.
+            </p>
+
+        </section>
+
+
+        <!-- 09 -->
+
+        <section class="terms-section">
+
+            <h2>
+                09. <span>Intellectual Property</span>
+            </h2>
+
+            <p>
+                Website content such as logos, designs, text,
+                graphics and other original materials may be
+                protected by applicable intellectual-property laws.
+            </p>
+
+            <p>
+                Content should not be copied, modified or used
+                commercially without appropriate permission.
+            </p>
+
+        </section>
+
+
+        <!-- 10 -->
+
+        <section class="terms-section">
+
+            <h2>
+                10. <span>Third-Party Links</span>
+            </h2>
+
+            <p>
+                The website may contain links to third-party websites.
+                UrbanDude is not responsible for the content or
+                practices of external websites.
+            </p>
+
+        </section>
+
+
+        <!-- 11 -->
+
+        <section class="terms-section">
+
+            <h2>
+                11. <span>Website Availability</span>
+            </h2>
+
+            <p>
+                We aim to keep the website available and functional,
+                but temporary interruptions may occur because of
+                maintenance, technical issues or other circumstances.
+            </p>
+
+        </section>
+
+
+        <!-- 12 -->
+
+        <section class="terms-section">
+
+            <h2>
+                12. <span>Changes to These Terms</span>
+            </h2>
+
+            <p>
+                UrbanDude may update these Terms & Conditions when
+                website features, services or policies change.
+            </p>
+
+            <p>
+                Updated terms will be displayed on this page.
+            </p>
+
+        </section>
+
+
+        <!-- 13 -->
+
+        <section class="terms-section">
+
+            <h2>
+                13. <span>Contact Us</span>
+            </h2>
+
+            <p>
+                If you have questions about these Terms & Conditions,
+                please contact the UrbanDude support team.
+            </p>
+
+            <div class="highlight">
+
+                Email: support@urbandude.com
+
+                <br>
+
+                Phone: +91 98765 43210
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>Ready to Explore UrbanDude?</h2>
+
+        <p>
+            Discover your next favourite style.
+        </p>
+
+        <a href="shop.html" class="btn">
+            START SHOPPING
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            URBAN<span>DUDE</span>
+        </div>
+
+        <p>
+            Your Style, Your Story.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms</a>
+            <a href="login.html">Login</a>
+            <a href="cart.html">Cart</a>
+
+        </div>
+
+        <p>
+            © 2026 UrbanDude. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+</html>

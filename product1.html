@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Urban Premium White Shirt | UrbanDude</title>
+
+<style>
+
+/* ---------- BASIC ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #080a0d;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ---------- HEADER ---------- */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(8,10,13,0.96);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid #292e35;
+}
+
+.navbar {
+    max-width: 1300px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #00d9ff;
+}
+
+.menu {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+}
+
+.menu a {
+    color: #c9cdd2;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.menu a:hover,
+.active {
+    color: #00d9ff !important;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.icons a:hover {
+    color: #00d9ff;
+}
+
+/* ---------- BREADCRUMB ---------- */
+
+.breadcrumb {
+    max-width: 1300px;
+    margin: auto;
+    padding: 25px;
+    color: #888f98;
+    font-size: 14px;
+}
+
+.breadcrumb a:hover {
+    color: #00d9ff;
+}
+
+/* ---------- PRODUCT SECTION ---------- */
+
+.product-section {
+    max-width: 1300px;
+    margin: auto;
+    padding: 10px 25px 70px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+/* ---------- PRODUCT IMAGE ---------- */
+
+.product-image {
+    position: relative;
+    background: #11151a;
+    border: 1px solid #292e35;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+    display: block;
+}
+
+.sale {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #00d9ff;
+    color: #061014;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.favourite {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+    border: 1px solid #444;
+    background: rgba(8,10,13,0.8);
+
+    color: white;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+.favourite:hover {
+    border-color: #00d9ff;
+    color: #00d9ff;
+}
+
+/* ---------- PRODUCT INFORMATION ---------- */
+
+.product-info {
+    padding-top: 10px;
+}
+
+.category {
+    color: #00d9ff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.product-info h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.rating {
+    color: #ffd43b;
+    margin-bottom: 20px;
+}
+
+.rating span {
+    color: #9da3aa;
+    margin-left: 8px;
+}
+
+.price-box {
+    padding: 20px 0;
+    border-top: 1px solid #292e35;
+    border-bottom: 1px solid #292e35;
+}
+
+.price {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.old-price {
+    color: #777;
+    text-decoration: line-through;
+    margin-left: 12px;
+}
+
+.discount {
+    color: #00d9ff;
+    margin-left: 12px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.description {
+    color: #aeb4bb;
+    line-height: 1.7;
+    margin: 25px 0;
+}
+
+/* ---------- DETAILS ---------- */
+
+.detail-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 25px 0 12px;
+}
+
+.sizes {
+    display: flex;
+    gap: 10px;
+}
+
+.size {
+    width: 48px;
+    height: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #454b52;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.size:hover {
+    border-color: #00d9ff;
+    color: #00d9ff;
+}
+
+/* ---------- QUANTITY ---------- */
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.quantity button,
+.quantity span {
+    width: 45px;
+    height: 42px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #363c43;
+    background: #11151a;
+    color: white;
+}
+
+.quantity button {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.quantity button:hover {
+    color: #00d9ff;
+    border-color: #00d9ff;
+}
+
+/* ---------- BUTTONS ---------- */
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.cart-btn,
+.buy-btn {
+    flex: 1;
+    padding: 16px;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cart-btn {
+    border: 1px solid #00d9ff;
+    color: white;
+    background: transparent;
+}
+
+.cart-btn:hover {
+    background: #00d9ff;
+    color: #061014;
+}
+
+.buy-btn {
+    border: 1px solid #00d9ff;
+    background: #00d9ff;
+    color: #061014;
+}
+
+.buy-btn:hover {
+    background: #00bddd;
+}
+
+/* ---------- DELIVERY ---------- */
+
+.delivery-box {
+    margin-top: 30px;
+    padding: 20px;
+    background: #11151a;
+    border: 1px solid #292e35;
+    border-radius: 10px;
+}
+
+.delivery-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.delivery-item:last-child {
+    margin-bottom: 0;
+}
+
+.delivery-icon {
+    font-size: 22px;
+}
+
+.delivery-item h4 {
+    margin-bottom: 5px;
+}
+
+.delivery-item p {
+    color: #888f98;
+    font-size: 13px;
+}
+
+/* ---------- PRODUCT DETAILS BOX ---------- */
+
+.info-section {
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 25px 70px;
+}
+
+.info-section h2 {
+    margin-bottom: 25px;
+    font-size: 26px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.info-card {
+    background: #11151a;
+    border: 1px solid #292e35;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.info-card:hover {
+    border-color: #00d9ff;
+}
+
+.info-card h3 {
+    margin-bottom: 12px;
+}
+
+.info-card p {
+    color: #969da5;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* ---------- RELATED PRODUCTS ---------- */
+
+.related {
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 25px 80px;
+}
+
+.related h2 {
+    margin-bottom: 25px;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: #11151a;
+    border: 1px solid #292e35;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #00d9ff;
+}
+
+.card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content p {
+    color: #00d9ff;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.card-content h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.card-price {
+    font-weight: bold;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    border-top: 1px solid #292e35;
+    padding: 35px 25px;
+    text-align: center;
+    color: #777;
+}
+
+footer span {
+    color: #00d9ff;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width: 900px) {
+
+    .menu {
+        display: none;
+    }
+
+    .product-section {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image img {
+        height: 500px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 500px) {
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .icons {
+        font-size: 17px;
+    }
+
+    .product-section {
+        padding: 10px 15px 50px;
+    }
+
+    .product-image img {
+        height: 420px;
+    }
+
+    .product-info h1 {
+        font-size: 28px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="navbar">
+
+<a href="index.html" class="logo">
+Urban<span>Dude</span>
+</a>
+
+<ul class="menu">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="shop.html">Shop</a></li>
+<li><a href="shirts.html" class="active">Shirts</a></li>
+<li><a href="tshirts.html">T-Shirts</a></li>
+<li><a href="pants.html">Pants</a></li>
+<li><a href="jackets.html">Jackets</a></li>
+<li><a href="accessories.html">Accessories</a></li>
+
+</ul>
+
+<div class="icons">
+
+<a href="search.html">⌕</a>
+<a href="favourites.html">♡</a>
+<a href="cart.html">🛒</a>
+<a href="login.html">♙</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- ================= BREADCRUMB ================= -->
+
+<div class="breadcrumb">
+
+<a href="index.html">Home</a>
+&nbsp; / &nbsp;
+<a href="shirts.html">Shirts</a>
+&nbsp; / &nbsp;
+Urban Premium White Shirt
+
+</div>
+
+
+<!-- ================= PRODUCT ================= -->
+
+<section class="product-section">
+
+
+<!-- IMAGE -->
+
+<div class="product-image">
+
+<span class="sale">25% OFF</span>
+
+<button class="favourite">♡</button>
+
+<img
+src="https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1000&q=85"
+alt="Urban Premium White Shirt">
+
+</div>
+
+
+<!-- PRODUCT INFORMATION -->
+
+<div class="product-info">
+
+<div class="category">
+MEN'S SHIRTS
+</div>
+
+<h1>Urban Premium White Shirt</h1>
+
+<div class="rating">
+★★★★★
+<span>4.8 | 126 Reviews</span>
+</div>
+
+
+<div class="price-box">
+
+<span class="price">₹1,499</span>
+
+<span class="old-price">₹1,999</span>
+
+<span class="discount">25% OFF</span>
+
+</div>
+
+
+<p class="description">
+
+Upgrade your everyday wardrobe with the Urban Premium White Shirt.
+Designed with a clean modern look, comfortable fabric and a stylish
+fit, this shirt is perfect for college, office, casual outings and
+special occasions.
+
+</p>
+
+
+<!-- SIZE -->
+
+<div class="detail-title">
+Select Size
+</div>
+
+<div class="sizes">
+
+<div class="size">S</div>
+<div class="size">M</div>
+<div class="size">L</div>
+<div class="size">XL</div>
+<div class="size">XXL</div>
+
+</div>
+
+
+<!-- QUANTITY -->
+
+<div class="detail-title">
+Quantity
+</div>
+
+<div class="quantity">
+
+<button>-</button>
+<span>1</span>
+<button>+</button>
+
+</div>
+
+
+<!-- BUTTONS -->
+
+<div class="buttons">
+
+<a href="cart.html" class="cart-btn">
+🛒 ADD TO CART
+</a>
+
+<a href="checkout.html" class="buy-btn">
+⚡ BUY NOW
+</a>
+
+</div>
+
+
+<!-- DELIVERY -->
+
+<div class="delivery-box">
+
+<div class="delivery-item">
+
+<div class="delivery-icon">🚚</div>
+
+<div>
+
+<h4>Free Delivery</h4>
+
+<p>
+Free delivery on orders above ₹999.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="delivery-item">
+
+<div class="delivery-icon">↩</div>
+
+<div>
+
+<h4>Easy Returns</h4>
+
+<p>
+Easy return and exchange within 7 days.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="delivery-item">
+
+<div class="delivery-icon">✓</div>
+
+<div>
+
+<h4>UrbanDude Promise</h4>
+
+<p>
+Quality checked products with secure packaging.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PRODUCT INFORMATION ================= -->
+
+<section class="info-section">
+
+<h2>Product Information</h2>
+
+<div class="info-grid">
+
+
+<div class="info-card">
+
+<h3>Material</h3>
+
+<p>
+Premium cotton blend fabric designed for comfort,
+breathability and everyday wear.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>Fit & Style</h3>
+
+<p>
+Modern regular fit with a clean collar and stylish
+minimal design suitable for multiple occasions.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>Care Instructions</h3>
+
+<p>
+Machine wash with similar colours. Do not use harsh
+bleach. Iron at medium temperature.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= RELATED PRODUCTS ================= -->
+
+<section class="related">
+
+<h2>You May Also Like</h2>
+
+<div class="related-grid">
+
+
+<div class="card">
+
+<a href="product1.html">
+
+<img
+src="https://images.unsplash.com/photo-1618932260643-eee4a2f652a6?auto=format&fit=crop&w=700&q=80"
+alt="Blue Casual Shirt">
+
+<div class="card-content">
+
+<p>SHIRT</p>
+
+<h3>Urban Casual Blue Shirt</h3>
+
+<div class="card-price">₹1,399</div>
+
+</div>
+
+</a>
+
+</div>
+
+
+<div class="card">
+
+<a href="product1.html">
+
+<img
+src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=700&q=80"
+alt="Classic Shirt">
+
+<div class="card-content">
+
+<p>SHIRT</p>
+
+<h3>Urban Classic Shirt</h3>
+
+<div class="card-price">₹1,599</div>
+
+</div>
+
+</a>
+
+</div>
+
+
+<div class="card">
+
+<a href="product1.html">
+
+<img
+src="https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?auto=format&fit=crop&w=700&q=80"
+alt="Premium Shirt">
+
+<div class="card-content">
+
+<p>SHIRT</p>
+
+<h3>Urban Premium Shirt</h3>
+
+<div class="card-price">₹1,699</div>
+
+</div>
+
+</a>
+
+</div>
+
+
+<div class="card">
+
+<a href="product1.html">
+
+<img
+src="https://images.unsplash.com/photo-1620012253295-c15aef0e1c3b?auto=format&fit=crop&w=700&q=80"
+alt="Black Shirt">
+
+<div class="card-content">
+
+<p>SHIRT</p>
+
+<h3>Urban Black Shirt</h3>
+
+<div class="card-price">₹1,499</div>
+
+</div>
+
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+© 2026 <span>UrbanDude</span> — Your Style, Your Story.
+</p>
+
+</footer>
+
+
+</body>
+</html>

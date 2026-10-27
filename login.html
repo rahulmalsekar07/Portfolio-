@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UrbanDude | Login & Signup</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #080a0d;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* BACKGROUND GLOW */
+        body::before {
+            content: "";
+            position: fixed;
+            width: 350px;
+            height: 350px;
+            background: #00d9ff;
+            border-radius: 50%;
+            filter: blur(160px);
+            opacity: 0.12;
+            top: 10%;
+            left: 5%;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 350px;
+            height: 350px;
+            background: #0077ff;
+            border-radius: 50%;
+            filter: blur(160px);
+            opacity: 0.12;
+            bottom: 5%;
+            right: 5%;
+            z-index: -1;
+        }
+
+        /* NAVBAR */
+        header {
+            width: 100%;
+            border-bottom: 1px solid #292e35;
+            background: rgba(8, 10, 13, 0.85);
+            backdrop-filter: blur(15px);
+        }
+
+        nav {
+            max-width: 1200px;
+            height: 75px;
+            margin: auto;
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #00d9ff;
+        }
+
+        .back-home {
+            color: #ddd;
+            text-decoration: none;
+            border: 1px solid #343a40;
+            padding: 9px 18px;
+            border-radius: 7px;
+            transition: 0.3s;
+        }
+
+        .back-home:hover {
+            border-color: #00d9ff;
+            color: #00d9ff;
+        }
+
+        /* MAIN */
+        main {
+            flex: 1;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 50px 20px;
+        }
+
+        /* LOGIN CONTAINER */
+        .auth-container {
+            width: 900px;
+            max-width: 100%;
+            min-height: 560px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            background: rgba(17, 21, 26, 0.75);
+            border: 1px solid #343a40;
+            border-radius: 25px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 25px 80px rgba(0, 0, 0, 0.55);
+
+            backdrop-filter: blur(20px);
+        }
+
+        /* LEFT SIDE */
+        .welcome {
+            position: relative;
+
+            padding: 50px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.45),
+                    rgba(0,0,0,0.75)
+                ),
+                url("https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=900&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .welcome h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .welcome h1 span {
+            color: #00d9ff;
+        }
+
+        .welcome h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .welcome p {
+            color: #ccc;
+            line-height: 1.7;
+            max-width: 350px;
+        }
+
+        .tagline {
+            margin-top: 25px;
+            color: #00d9ff !important;
+            font-weight: bold;
+        }
+
+        /* RIGHT SIDE */
+        .form-area {
+            padding: 45px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-area h2 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        /* FORM */
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .input-box {
+            position: relative;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 14px 45px 14px 15px;
+
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid #343a40;
+            border-radius: 8px;
+
+            color: white;
+            outline: none;
+
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .input-box input:focus {
+            border-color: #00d9ff;
+            box-shadow: 0 0 10px rgba(0,217,255,0.12);
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            color: #777;
+        }
+
+        /* OPTIONS */
+        .options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin: 5px 0 22px;
+
+            font-size: 13px;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: #aaa;
+        }
+
+        .remember input {
+            accent-color: #00d9ff;
+        }
+
+        .forgot {
+            color: #00d9ff;
+            text-decoration: none;
+        }
+
+        .forgot:hover {
+            text-decoration: underline;
+        }
+
+        /* LOGIN BUTTON */
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+
+            border: none;
+            border-radius: 8px;
+
+            background: #00d9ff;
+            color: #061014;
+
+            font-size: 15px;
+            font-weight: bold;
+
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #72ebff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,217,255,0.2);
+        }
+
+        /* DIVIDER */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin: 24px 0;
+
+            color: #666;
+            font-size: 12px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #30353a;
+        }
+
+        /* GOOGLE BUTTON */
+        .google-btn {
+            width: 100%;
+            padding: 12px;
+
+            background: transparent;
+            color: white;
+
+            border: 1px solid #343a40;
+            border-radius: 8px;
+
+            cursor: pointer;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .google-btn:hover {
+            border-color: #00d9ff;
+            background: rgba(0,217,255,0.05);
+        }
+
+        /* SIGNUP */
+        .signup-text {
+            text-align: center;
+            margin-top: 25px;
+
+            color: #888;
+            font-size: 14px;
+        }
+
+        .signup-text a {
+            color: #00d9ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+
+            border-top: 1px solid #222;
+            color: #666;
+
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+        @media(max-width: 750px) {
+
+            .auth-container {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome {
+                min-height: 300px;
+                padding: 35px;
+            }
+
+            .welcome h1 {
+                font-size: 38px;
+            }
+
+            .form-area {
+                padding: 35px;
+            }
+        }
+
+        @media(max-width: 450px) {
+
+            nav {
+                padding: 0 15px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .back-home {
+                padding: 8px 12px;
+                font-size: 13px;
+            }
+
+            main {
+                padding: 25px 12px;
+            }
+
+            .welcome {
+                min-height: 250px;
+                padding: 28px;
+            }
+
+            .welcome h1 {
+                font-size: 32px;
+            }
+
+            .welcome h2 {
+                font-size: 20px;
+            }
+
+            .form-area {
+                padding: 28px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                URBAN<span>DUDE</span>
+            </div>
+
+            <a href="index.html" class="back-home">
+                ← Back to Home
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main>
+
+        <div class="auth-container">
+
+
+            <!-- LEFT WELCOME SECTION -->
+            <section class="welcome">
+
+                <h1>
+                    URBAN<span>DUDE</span>
+                </h1>
+
+                <h2>
+                    Welcome Back.
+                </h2>
+
+                <p>
+                    Discover modern men's fashion designed
+                    for confidence, comfort and everyday style.
+                </p>
+
+                <p class="tagline">
+                    Your Style, Your Story.
+                </p>
+
+            </section>
+
+
+            <!-- LOGIN FORM -->
+            <section class="form-area">
+
+                <h2>Login</h2>
+
+                <p class="subtitle">
+                    Login to continue shopping with UrbanDude.
+                </p>
+
+
+                <form>
+
+
+                    <!-- EMAIL -->
+                    <div class="input-group">
+
+                        <label>Email Address</label>
+
+                        <div class="input-box">
+
+                            <input
+                                type="email"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                            <span class="input-icon">
+                                ✉
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="input-group">
+
+                        <label>Password</label>
+
+                        <div class="input-box">
+
+                            <input
+                                type="password"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                            <span class="input-icon">
+                                🔒
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- OPTIONS -->
+                    <div class="options">
+
+                        <label class="remember">
+
+                            <input type="checkbox">
+
+                            Remember me
+
+                        </label>
+
+                        <a href="#" class="forgot">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- LOGIN -->
+                    <button type="submit" class="login-btn">
+                        LOGIN
+                    </button>
+
+
+                </form>
+
+
+                <!-- DIVIDER -->
+                <div class="divider">
+                    OR CONTINUE WITH
+                </div>
+
+
+                <!-- GOOGLE -->
+                <button class="google-btn">
+                    🌐 Continue with Google
+                </button>
+
+
+                <!-- SIGNUP -->
+                <p class="signup-text">
+
+                    Don't have an account?
+
+                    <a href="signup.html">
+                        Create Account
+                    </a>
+
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        © 2026 UrbanDude. All Rights Reserved.
+
+    </footer>
+
+
+</body>
+</html>

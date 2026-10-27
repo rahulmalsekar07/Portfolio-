@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanDude | Shirts</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #080a0d;
+            color: white;
+        }
+
+        /* NAVBAR */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(8,10,13,0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #292e35;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #00d9ff;
+        }
+
+        .menu {
+            display: flex;
+            gap: 23px;
+            list-style: none;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .menu a:hover,
+        .active {
+            color: #00d9ff !important;
+        }
+
+        .icons {
+            display: flex;
+            gap: 15px;
+            font-size: 20px;
+        }
+
+        /* BANNER */
+        .banner {
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(5,8,11,0.72),
+                    rgba(5,8,11,0.82)
+                ),
+                url("https://images.unsplash.com/photo-1603252110481-7ba873bf42ab?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .banner h1 {
+            font-size: 60px;
+            margin-bottom: 12px;
+        }
+
+        .banner p {
+            color: #aeb5bb;
+            font-size: 17px;
+        }
+
+        /* SHOP */
+        .shop {
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 25px;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+        }
+
+        .top h2 {
+            font-size: 28px;
+        }
+
+        .top select {
+            background: #11151a;
+            color: white;
+            border: 1px solid #00d9ff;
+            padding: 10px 15px;
+            border-radius: 7px;
+        }
+
+        /* PRODUCTS */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 22px;
+        }
+
+        .product {
+            background: #11151a;
+            border: 1px solid #292f35;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-7px);
+            border-color: #00d9ff;
+        }
+
+        .image {
+            height: 330px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .product:hover img {
+            transform: scale(1.06);
+        }
+
+        .heart {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.75);
+            border-radius: 50%;
+            font-size: 21px;
+            cursor: pointer;
+        }
+
+        .heart:hover {
+            color: #00d9ff;
+        }
+
+        .info {
+            padding: 18px;
+        }
+
+        .info h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .type {
+            color: #858e95;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .rating {
+            color: #00d9ff;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 19px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .old {
+            color: #666;
+            font-size: 13px;
+            text-decoration: line-through;
+            margin-left: 6px;
+        }
+
+        .cart {
+            width: 100%;
+            padding: 11px;
+            background: transparent;
+            color: white;
+            border: 1px solid #00d9ff;
+            border-radius: 7px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .cart:hover {
+            background: #00d9ff;
+            color: #061014;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #050608;
+            border-top: 1px solid #252a30;
+            padding: 50px 25px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+            color: #9ca3a8;
+            text-decoration: none;
+            line-height: 2;
+        }
+
+        footer a:hover {
+            color: #00d9ff;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 35px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #252a30;
+            text-align: center;
+            color: #777;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 1000px) {
+            .products {
+                grid-template-columns: repeat(3,1fr);
+            }
+        }
+
+        @media(max-width: 750px) {
+            .menu {
+                display: none;
+            }
+
+            .products {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        @media(max-width: 500px) {
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .banner h1 {
+                font-size: 42px;
+            }
+
+            .top {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <nav>
+
+        <div class="logo">
+            URBAN<span>DUDE</span>
+        </div>
+
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="shirts.html" class="active">Shirts</a></li>
+            <li><a href="tshirts.html">T-Shirts</a></li>
+            <li><a href="pants.html">Pants</a></li>
+            <li><a href="jackets.html">Jackets</a></li>
+        </ul>
+
+        <div class="icons">
+            <span>⌕</span>
+            <span>♡</span>
+            <span>🛒</span>
+        </div>
+
+    </nav>
+</header>
+
+
+<!-- BANNER -->
+<div class="banner">
+
+    <div>
+        <h1>MEN'S SHIRTS</h1>
+
+        <p>
+            Classic, casual and modern shirts for every occasion.
+        </p>
+    </div>
+
+</div>
+
+
+<!-- SHIRT PRODUCTS -->
+<div class="shop">
+
+    <div class="top">
+
+        <h2>Shirts Collection</h2>
+
+        <select>
+            <option>Sort By</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Top Rated</option>
+        </select>
+
+    </div>
+
+
+    <div class="products">
+
+
+        <!-- 1 -->
+        <div class="product">
+
+            <div class="image">
+                <img src="C:\Users\LENOVO S05\Desktop\rahul-html\rahul-html\cl8.jpg">
+                <div class="heart">♡</div>
+            </div>
+
+            <div class="info">
+                <div class="type">CASUAL SHIRT</div>
+                <h3>Classic White Shirt</h3>
+                <div class="rating">★★★★★</div>
+                <div class="price">₹999 <span class="old">₹1,299</span></div>
+                <button class="cart">ADD TO CART</button>
+            </div>
+
+        </div>
+
+
+        <!-- 2 -->
+        <div class="product">
+
+            <div class="image">
+                <img src="cl5.jpg">
+                <div class="heart">♡</div>
+            </div>
+
+            <div class="info">
+                <div class="type">FORMAL SHIRT</div>
+                <h3>Sky Blue Formal Shirt</h3>
+                <div class="rating">★★★★☆</div>
+                <div class="price">₹1,099 <span class="old">₹1,399</span></div>
+                <button class="cart">ADD TO CART</button>
+            </div>
+
+        </div>
+
+
+        <!-- 3 -->
+        <div class="product">
+
+            <div class="image">
+                <img src="C:\Users\LENOVO S05\Desktop\rahul-html\rahul-html\cl22.jpg">
+                <div class="heart">♡</div>
+            </div>
+
+            <div class="info">
+                <div class="type">CASUAL SHIRT</div>
+                <h3>Black Casual Shirt</h3>
+                <div class="rating">★★★★★</div>
+                <div class="price">₹1,049 <span class="old">₹1,399</span></div>
+                <button class="cart">ADD TO CART</button>
+            </div>
+
+        </div>
+
+
+        <!-- 4 -->
+        <div class="product">
+
+            <div class="image">
+                <img src="C:\Users\LENOVO S05\Desktop\rahul-html\rahul-html\cl27.jpg">
+                <div class="heart">♡</div>
+            </div>
+
+            <div class="info">
+                <div class="type">LINEN SHIRT</div>
+                <h3>Beige Linen Shirt</h3>
+                <div class="rating">★★★★☆</div>
+                <div class="price">₹1,199 <span class="old">₹1,499</span></div>
+                <button class="cart">ADD TO CART</button>
+            </div>
+
+        </div>
+
+
+        <!-- 5 -->
+        <div class="product">
+
+            <div class="image">
+                <img src="cl7.jpg">
+                <div class="heart">♡</div>
+            </div>
+
+            <div class="info">
+                <div class="type">CHECK SHIRT</div>
+                <h3>Urban Check Shirt</h3>
+                <div class="rating">★★★★★</div>
+                <div class="price">₹899 <span class="old">₹1,199</span></div>
+                <button class="cart">ADD TO CART</button>
+            </div>
+
+        </div>
+
+
+        <!-- 6 -->
+        <div class="product">
+
+            <div class="image">
+                <img src="C:\Users\LENOVO S05\Desktop\rahul-html\rahul-html\cl26.jpg">
+                <div class="heart">♡</div>
+            </div>
+
+            <div class="info">
+                <div class="type">DENIM SHIRT</div>
+                <h3>Blue Denim Shirt</h3>
+                <div class="rating">★★★★☆</div>
+                <div class="price">₹1,299 <span class="old">₹1,699</span></div>
+                <button class="cart">ADD TO CART</button>
+            </div>
+
+        </div>
+
+
+        <!-- 7 -->
+        <div class="product">
+
+            <div class="image">
+                <img src="cl4.jpg">
+                <div class="heart">♡</div>
+            </div>
+
+            <div class="info">
+                <div class="type">OVERSIZED SHIRT</div>
+                <h3>Dark Oversized Shirt</h3>
+                <div class="rating">★★★★★</div>
+                <div class="price">₹1,149 <span class="old">₹1,499</span></div>
+                <button class="cart">ADD TO CART</button>
+            </div>
+
+        </div>
+
+
+        <!-- 8 -->
+        <div class="product">
+
+            <div class="image">
+                <img src="C:\Users\LENOVO S05\Desktop\rahul-html\rahul-html\cl23.jpg">
+                <div class="heart">♡</div>
+            </div>
+
+            <div class="info">
+                <div class="type">PRINTED SHIRT</div>
+                <h3>Modern Printed Shirt</h3>
+                <div class="rating">★★★★☆</div>
+                <div class="price">₹949 <span class="old">₹1,299</span></div>
+                <button class="cart">ADD TO CART</button>
+            </div>
+
+        </div>
+
+
+        <!-- 9 -->
+        <div class="product">
+
+            <div class="image">
+                <img src="cl12.jpg">
+                <div class="heart">♡</div>
+            </div>
+
+            <div class="info">
+                <div class="type">POLO SHIRT</div>
+                <h3>Premium Polo Shirt</h3>
+                <div class="rating">★★★★★</div>
+                <div class="price">₹849 <span class="old">₹1,099</span></div>
+                <button class="cart">ADD TO CART</button>
+            </div>
+
+        </div>
+
+
+        <!-- 10 -->
+        <div class="product">
+
+            <div class="image">
+                <img src="C:\Users\LENOVO S05\Desktop\rahul-html\rahul-html\cl28.jpg">
+                <div class="heart">♡</div>
+            </div>
+
+            <div class="info">
+                <div class="type">PREMIUM SHIRT</div>
+                <h3>Brown Premium Shirt</h3>
+                <div class="rating">★★★★★</div>
+                <div class="price">₹1,249 <span class="old">₹1,599</span></div>
+                <button class="cart">ADD TO CART</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+            <h3>URBANDUDE</h3>
+            <p>Your Style, Your Story.</p>
+            <p>Modern men's fashion for everyday confidence.</p>
+        </div>
+
+        <div>
+            <h3>Shop</h3>
+            <p><a href="shirts.html">Shirts</a></p>
+            <p><a href="tshirts.html">T-Shirts</a></p>
+            <p><a href="pants.html">Pants</a></p>
+            <p><a href="jackets.html">Jackets</a></p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <p><a href="index.html">Home</a></p>
+            <p><a href="shop.html">Shop</a></p>
+            <p><a href="about.html">About</a></p>
+            <p><a href="contact.html">Contact</a></p>
+        </div>
+
+        <div>
+            <h3>Contact</h3>
+            <p>Email: urbandude@example.com</p>
+            <p>Phone: +91 98765 43210</p>
+            <p>India</p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 UrbanDude. All Rights Reserved.
+    </div>
+
+</footer>
+
+</body>
+</html>
